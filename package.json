@@ -17,6 +17,7 @@
     "eslint": "npx projen eslint",
     "package": "npx projen package",
     "package-all": "npx projen package-all",
+    "package:java": "npx projen package:java",
     "package:js": "npx projen package:js",
     "package:python": "npx projen package:python",
     "post-compile": "npx projen post-compile",
@@ -38,7 +39,7 @@
     "@types/node": "^18",
     "@typescript-eslint/eslint-plugin": "^6",
     "@typescript-eslint/parser": "^6",
-    "aws-cdk-lib": "2.122.0",
+    "aws-cdk-lib": "2.147.3",
     "constructs": "10.0.5",
     "dotenv": "^16.0.1",
     "eslint": "^8",
@@ -49,7 +50,7 @@
     "jsii": "~5.3",
     "jsii-diff": "^1.63.2",
     "jsii-docgen": "^7.0.67",
-    "jsii-pacmak": "^1.63.2",
+    "jsii-pacmak": "^1.98.0",
     "jsii-rosetta": "~5.3",
     "prettier": "^3.2.5",
     "projen": "^0.79.3",
@@ -59,7 +60,7 @@
     "typescript": "~5.3"
   },
   "peerDependencies": {
-    "aws-cdk-lib": "^2.122.0",
+    "aws-cdk-lib": "^2.147.3",
     "constructs": "^10.0.5"
   },
   "keywords": [
@@ -113,6 +114,13 @@
   "jsii": {
     "outdir": "dist",
     "targets": {
+      "java": {
+        "package": "fr.fabienfleureau.cdk_fck_nat",
+        "maven": {
+          "groupId": "fr.fabienfleureau",
+          "artifactId": "cdk-fck-nat"
+        }
+      },
       "python": {
         "distName": "cdk-fck-nat",
         "module": "cdk_fck_nat"

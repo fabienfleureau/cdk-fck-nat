@@ -10,7 +10,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   description: 'A NAT Gateway instance construct built on the fck-nat AMI.',
   majorVersion: 1,
 
-  cdkVersion: '2.122.0',
+  cdkVersion: '2.147.3',
   devDeps: ['dotenv'],
 
   dependabot: true,
@@ -28,6 +28,11 @@ const project = new awscdk.AwsCdkConstructLibrary({
   publishToPypi: {
     distName: 'cdk-fck-nat',
     module: 'cdk_fck_nat',
+  },
+  publishToMaven: {
+    javaPackage: 'fr.fabienfleureau.cdk_fck_nat',
+    mavenGroupId: 'fr.fabienfleureau',
+    mavenArtifactId: 'cdk-fck-nat',
   },
 
   gitignore: ['.env', 'cdk.context.json', 'cdk.out'],

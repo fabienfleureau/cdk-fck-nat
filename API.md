@@ -300,6 +300,7 @@ Don't call this directly, the VPC will call it automatically.
 | --- | --- |
 | <code><a href="#cdk-fck-nat.FckNatInstanceProvider.gateway">gateway</a></code> | Use NAT Gateways to provide NAT services for your VPC. |
 | <code><a href="#cdk-fck-nat.FckNatInstanceProvider.instance">instance</a></code> | Use NAT instances to provide NAT services for your VPC. |
+| <code><a href="#cdk-fck-nat.FckNatInstanceProvider.instanceV2">instanceV2</a></code> | Use NAT instances to provide NAT services for your VPC. |
 
 ---
 
@@ -323,7 +324,7 @@ NAT gateways are managed by AWS.
 
 ---
 
-##### `instance` <a name="instance" id="cdk-fck-nat.FckNatInstanceProvider.instance"></a>
+##### ~~`instance`~~ <a name="instance" id="cdk-fck-nat.FckNatInstanceProvider.instance"></a>
 
 ```typescript
 import { FckNatInstanceProvider } from 'cdk-fck-nat'
@@ -342,6 +343,30 @@ your own NatProvider based on AutoScaling groups if you need that.
 > [https://docs.aws.amazon.com/vpc/latest/userguide/VPC_NAT_Instance.html](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_NAT_Instance.html)
 
 ###### `props`<sup>Required</sup> <a name="props" id="cdk-fck-nat.FckNatInstanceProvider.instance.parameter.props"></a>
+
+- *Type:* aws-cdk-lib.aws_ec2.NatInstanceProps
+
+---
+
+##### `instanceV2` <a name="instanceV2" id="cdk-fck-nat.FckNatInstanceProvider.instanceV2"></a>
+
+```typescript
+import { FckNatInstanceProvider } from 'cdk-fck-nat'
+
+FckNatInstanceProvider.instanceV2(props: NatInstanceProps)
+```
+
+Use NAT instances to provide NAT services for your VPC.
+
+NAT instances are managed by you, but in return allow more configuration.
+
+Be aware that instances created using this provider will not be
+automatically replaced if they are stopped for any reason. You should implement
+your own NatProvider based on AutoScaling groups if you need that.
+
+> [https://docs.aws.amazon.com/vpc/latest/userguide/VPC_NAT_Instance.html](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_NAT_Instance.html)
+
+###### `props`<sup>Required</sup> <a name="props" id="cdk-fck-nat.FckNatInstanceProvider.instanceV2.parameter.props"></a>
 
 - *Type:* aws-cdk-lib.aws_ec2.NatInstanceProps
 
